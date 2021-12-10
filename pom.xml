@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>untitled</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+                <executions>
+                    <execution>
+                        <id>testRequest</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${project.basedir}/src/main/resources/xsd/</schemaDirectory>
+                            <schemaIncludes>
+                                <include>putin.xsd</include>
+                            </schemaIncludes>
+                            <generateDirectory>${project.basedir}/target/generated-sources/request</generateDirectory>
+                            <generatePackage>test.request</generatePackage>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>testResponse</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${project.basedir}/src/main/resources/xsd/</schemaDirectory>
+                            <schemaIncludes>
+                                <include>out.xsd</include>
+                            </schemaIncludes>
+                            <generateDirectory>${project.basedir}/target/generated-sources/response</generateDirectory>
+                            <generatePackage>test.response</generatePackage>
+                        </configuration>
+                    </execution>
+
+
+                </executions>
+                <configuration>
+                    <strict>false</strict>
+                    <extension>true</extension>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns0=" urn:test.ru " attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace=" urn:test.ru " xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="ProductDefinition">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="RefNo" type="xs:unsignedShort" />
+                <xs:element name="Description" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
